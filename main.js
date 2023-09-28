@@ -1,3 +1,4 @@
+// Generate the webpage
 function generate() {
     if(myWindow != null) {
         myWindow.close();
@@ -15,10 +16,10 @@ function generate() {
         return;
     }
     let fontsize = document.getElementById("fontSize").value;
+    let fontStyle = document.querySelector("input[type=radio][name=fontStyle]:checked").id;
+    console.log(fontStyle);
     let date = new Date().toLocaleDateString("de-DE");
-    console.log(date);
-    //page += "<h1>Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
-    page += "<h1 style=\"font-size:" + fontsize + "px;\">Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
+    page += "<h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
     page += "<br>";
 
     // Generate the Website Links
@@ -32,7 +33,8 @@ function generate() {
     myWindow = window.open("", "ISP", width=1000, height=2000);
     myWindow.document.write(page);
 }
-    
+
+// Button for adding WebsitePage
 function addWebsite() {
     let table = document.getElementById("Websites");
     let row = table.insertRow(-1);
@@ -43,6 +45,7 @@ function addWebsite() {
     websiteCount += 1;
 }
 
+// Button for removing WebsitePage
 function deleteWebsite() {
     if (websiteCount == 1) {
         alert("You can't delete more row!");
