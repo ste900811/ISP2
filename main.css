@@ -1,0 +1,14 @@
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.addWebsite {
+    display: flex;
+    justify-content: center;
+}
+
+.generate {
+    display: flex;
+    justify-content: center;
+}

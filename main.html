@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Steven Lu">
+        <title>YiYang Lu ISP PA2</title>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <script src="main.js"></script> 
+    </head>
+
+    <body>
+
+        <h1>Yi-Yang(Steven) Lu - A Simple Web Page Creator</h1>
+        
+        <hr>
+
+        <h2> Basic Information</h2>
+            <p>
+                First Name:&ensp;<input type="text" id="firstName">
+                <span>&emsp;Last Name:&ensp;<input type="text" id="lastName"></span>
+            </p>
+        </h2>
+
+        <hr>
+
+        <h2>Website Links</h2>
+        <table id="Websites" border="1" style="width:100%">
+            <tr>
+                <th width="40%">Website Name</th>
+                <th width="60%">Website address</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="websiteName0" style="width: 50%;"></td>
+                <td><input type="text" id="websiteAddress0" style="width: 50%;"></td>
+            </tr>
+        </table>
+        <div class="addWebsite">
+            <button onclick="addWebsite()">Add Row</button>
+            <span>&emsp;</span>
+            <button onclick="deleteWebsite()">RemoveRow</button>
+        </div>
+        <br>
+
+        <div class="generate">
+            <button onclick="generate()">Generate Website</button>
+        </div>
+
+        <script>
+            var myWindow = null;
+            var page = "";
+            var websiteCount = 1;
+        </script>  
+    </body>
+</html>
