@@ -14,9 +14,11 @@ function generate() {
         alert("Please Enter Last Name");
         return;
     }
+    let fontsize = document.getElementById("fontSize").value;
     let date = new Date().toLocaleDateString("de-DE");
     console.log(date);
-    page += "<h1>Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
+    //page += "<h1>Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
+    page += "<h1 style=\"font-size:" + fontsize + "px;\">Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
     page += "<br>";
 
     // Generate the Website Links
@@ -27,7 +29,7 @@ function generate() {
     }
 
     // Create new window and open with "page"
-    myWindow = window.open("", "ISP", "width=800,height=168");
+    myWindow = window.open("", "ISP", width=1000, height=2000);
     myWindow.document.write(page);
 }
     
