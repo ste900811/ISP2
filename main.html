@@ -30,15 +30,10 @@
                 <input type="radio" name="fontStyle" id="Garamond "><label for="Garamond ">Garamond </label>
             </p>
             <p>
-                Font Style:&ensp;
-                <input type="radio" name="fontColor" id="Black" checked><label for="Black">Black</label>&emsp;
-                <input type="radio" name="fontColor" id="Red"><label for="Red">Red</label>&emsp;
-                <input type="radio" name="fontColor" id="Orange"><label for="Orange">Orange</label>&emsp;
-                <input type="radio" name="fontColor" id="Yellow"><label for="Yellow">Yellow</label>&emsp;
-                <input type="radio" name="fontColor" id="Green "><label for="Green ">Green </label>&emsp;
-                <input type="radio" name="fontColor" id="Blue "><label for="Blue ">Blue </label>&emsp;
-                <input type="radio" name="fontColor" id="Indigo "><label for="Indigo ">Indigo </label>&emsp;
-                <input type="radio" name="fontColor" id="Violet "><label for="Violet ">Violet </label>
+                Font Color:&ensp;
+                <input type="range" id="colorRed" min="0" max="225" value="122" oninput="Red.innerText = this.value"> Red: <span id="Red">122</span>&ensp;
+                <input type="range" id="colorGreen" min="0" max="225" value="122" oninput="Green.innerText = this.value"> Green: <span id="Green">122</span>&ensp;
+                <input type="range" id="colorBlue" min="0" max="225" value="122" oninput="Blue.innerText = this.value"> Blue: <span id="Blue">122</span>
             </p>
         </h2>
 
@@ -55,12 +50,14 @@
                 <td><input type="text" id="websiteAddress0" style="width: 50%;"></td>
             </tr>
         </table>
+        <br>
         <div class="addWebsite">
             <button onclick="addWebsite()">Add Row</button>
             <span>&emsp;</span>
             <button onclick="deleteWebsite()">RemoveRow</button>
         </div>
-        <br>
+
+        <hr>
 
         <div class="generate">
             <button onclick="generate()">Generate Website</button>

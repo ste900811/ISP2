@@ -17,9 +17,11 @@ function generate() {
     }
     let fontsize = document.getElementById("fontSize").value;
     let fontStyle = document.querySelector("input[type=radio][name=fontStyle]:checked").id;
-    let fontColor = document.querySelector("input[type=radio][name=fontColor]:checked").id;
+    let colorRed = document.getElementById("colorRed").value;
+    let colorGreen = document.getElementById("colorGreen").value;
+    let colorBlue = document.getElementById("colorBlue").value;
     let date = new Date().toLocaleDateString("de-DE");
-    page += "<h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:" + fontColor + ";\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
+    page += "<h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ");\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
     page += "<br>";
 
     // Generate the Website Links
