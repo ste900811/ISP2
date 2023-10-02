@@ -2,6 +2,7 @@
 function generate() {
     if(myWindow != null) {
         myWindow.close();
+        page = "";
     }
 
     // Generate the website title
@@ -51,6 +52,13 @@ function generate() {
         }
     }
     page += "<script>function playSound(animal){let audio = new Audio(\"./Sounds/\" + animal + \".wav\");audio.play();}</script>";
+
+    // Generate drag and drop text
+    page += "<p style = \"font-size: 50px; position: absolute; top: 200px; left: 0px; background-color: lightgrey;\" onmousedown = \"grabber(event);\"> This is ISP PA2 </p>";
+    page += "<script>var diffX,diffY,theElement;function grabber(event){theElement=event.currentTarget;let posX=parseInt(theElement.style.left);let posY = parseInt(theElement.style.top);"
+    page += "diffX=event.clientX-posX;diffY=event.clientY-posY;document.addEventListener(\"mousemove\",mover,true);document.addEventListener(\"mouseup\", dropper, true);event.stopPropagation();event.preventDefault();}"
+    page += "function mover(event){theElement.style.left=(event.clientX-diffX)+\"px\";theElement.style.top=(event.clientY-diffY)+\"px\";event.stopPropagation();}function dropper(event){document.removeEventListener(\"mouseup\""
+    page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script>"
 
     // Create new window and open with "page"
     myWindow = window.open("", "ISP", "width=800, height=1200");
