@@ -25,10 +25,15 @@ function generate() {
     page += "<br><br>";
 
     // Generate the Website Links
+    let buttonCount = 0;
     for (let i = 0; i < websiteCount; i++) {
         var websiteName = document.getElementById("websiteName" + i).value;
         var websiteAddress = document.getElementById("websiteAddress" + i).value;
-        page += "<button onclick='window.open(" + "\"http://" + websiteAddress + "\")'>" + websiteName + "</button>";
+        page += "<button style=\"margin-right:10px;\" onclick='window.open(" + "\"http://" + websiteAddress + "\")'>" + websiteName + "</button>";
+        buttonCount += 1;
+        if (buttonCount%5 === 0) {
+            page += "<br>";
+        }
     }
     page += "<br><br>";
 

@@ -60,38 +60,47 @@
         <hr>
 
         <h2>Click the animal you liked:</h2>
-            <p>
-                <input type="checkbox" name="animal" id="bee" value="bee"><label for="bee">Bee</label>&emsp;&emsp;&emsp;
-                <input type="checkbox" name="animal" id="bird" value="bird"><label for="bird">Bird</label>&emsp;&emsp;&nbsp;
-                <input type="checkbox" name="animal" id="cat" value="cat"><label for="cat">Cat</label>&emsp;&emsp;&ensp;
-                <input type="checkbox" name="animal" id="chicken" value="chicken"><label for="chicken">Chicken</label>&emsp;&ensp;
-                <input type="checkbox" name="animal" id="cow" value="cow"><label for="cow">Cow</label>
-            </p>
-            <p>
-                <input type="checkbox" name="animal" id="cricket" value="cricket"><label for="cricket">Cricket</label>&emsp;&ensp;
-                <input type="checkbox" name="animal" id="dog" value="dog"><label for="dog">Dog</label>&emsp;&emsp;&ensp;
-                <input type="checkbox" name="animal" id="dolphin" value="dolphin"><label for="dolphin">Dolphin</label>&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="dragon" value="dragon"><label for="dragon">Dragon</label>&emsp;&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="eagle" value="eagle"><label for="eagle">Eagle</label>
-            </p>
-            <p>
-                <input type="checkbox" name="animal" id="elephant" value="elephant"><label for="elephant">Elephant</label>&emsp;
-                <input type="checkbox" name="animal" id="horse" value="horse"><label for="horse">Horse</label>&emsp;&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="lion" value="lion"><label for="lion">Lion</label>&emsp;&emsp;
-                <input type="checkbox" name="animal" id="monkey" value="monkey"><label for="monkey">Monkey</label>&emsp;&ensp;
-                <input type="checkbox" name="animal" id="pig" value="pig"><label for="pig">Pig</label>
-            </p>
-            <p>
-                <input type="checkbox" name="animal" id="rhino" value="rhino"><label for="rhino">Rhino</label>&emsp;&emsp;
-                <input type="checkbox" name="animal" id="sheep" value="sheep"><label for="sheep">Sheep</label>&emsp;&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="squirrel" value="squirrel"><label for="squirrel">Squirrel</label>&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="tiger" value="tiger"><label for="tiger">Tiger</label>&emsp;&emsp;&ensp;&nbsp;
-                <input type="checkbox" name="animal" id="wolf" value="wolf"><label for="wolf">Wolf</label>
-            </p>
+        <p>
+            <input type="checkbox" name="animal" id="bee" value="bee"><label for="bee">Bee</label>&emsp;&emsp;&emsp;
+            <input type="checkbox" name="animal" id="bird" value="bird"><label for="bird">Bird</label>&emsp;&emsp;&nbsp;
+            <input type="checkbox" name="animal" id="cat" value="cat"><label for="cat">Cat</label>&emsp;&emsp;&ensp;
+            <input type="checkbox" name="animal" id="chicken" value="chicken"><label for="chicken">Chicken</label>&emsp;&ensp;
+            <input type="checkbox" name="animal" id="cow" value="cow"><label for="cow">Cow</label>
+        </p>
+        <p>
+            <input type="checkbox" name="animal" id="cricket" value="cricket"><label for="cricket">Cricket</label>&emsp;&ensp;
+            <input type="checkbox" name="animal" id="dog" value="dog"><label for="dog">Dog</label>&emsp;&emsp;&ensp;
+            <input type="checkbox" name="animal" id="dolphin" value="dolphin"><label for="dolphin">Dolphin</label>&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="dragon" value="dragon"><label for="dragon">Dragon</label>&emsp;&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="eagle" value="eagle"><label for="eagle">Eagle</label>
+        </p>
+        <p>
+            <input type="checkbox" name="animal" id="elephant" value="elephant"><label for="elephant">Elephant</label>&emsp;
+            <input type="checkbox" name="animal" id="horse" value="horse"><label for="horse">Horse</label>&emsp;&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="lion" value="lion"><label for="lion">Lion</label>&emsp;&emsp;
+            <input type="checkbox" name="animal" id="monkey" value="monkey"><label for="monkey">Monkey</label>&emsp;&ensp;
+            <input type="checkbox" name="animal" id="pig" value="pig"><label for="pig">Pig</label>
+        </p>
+        <p>
+            <input type="checkbox" name="animal" id="rhino" value="rhino"><label for="rhino">Rhino</label>&emsp;&emsp;
+            <input type="checkbox" name="animal" id="sheep" value="sheep"><label for="sheep">Sheep</label>&emsp;&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="squirrel" value="squirrel"><label for="squirrel">Squirrel</label>&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="tiger" value="tiger"><label for="tiger">Tiger</label>&emsp;&emsp;&ensp;&nbsp;
+            <input type="checkbox" name="animal" id="wolf" value="wolf"><label for="wolf">Wolf</label>
+        </p>
 
         <hr>
 
         <h2>Background Setup</h2>
+        <div id="container" style="width:98vw; height:300px;">
+            <div class="dropbox" ondrop="droppoint(event)" ondragover="allowDropOption(event)"></div>
+            <div class="dragDrop" style="width:120px; height:120px; float:left; margin: 10px;"></div>
+            <span style = "position: absolute; top: 200px; left: 75px; background-color: lightgrey;" onmousedown = "grabber(event);"> cats </span>
+            <span style = "position: absolute; top: 200px; left: 150px; background-color: lightgrey;" onmousedown = "grabber(event);"> cows </span>
+            <span style = "position: absolute; top: 200px; left: 225px; background-color: lightgrey;" onmousedown = "grabber(event);"> glue </span>
+            <span style = "position: absolute; top: 200px; left: 300px; background-color: lightgrey;" onmousedown = "grabber(event);"> is </span>
+        </div>
+
         <hr>
 
         <div class="generate">
