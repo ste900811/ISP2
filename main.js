@@ -22,7 +22,7 @@ function generate() {
     let colorBlue = document.getElementById("colorBlue").value;
     let date = new Date().toLocaleDateString("de-DE");
     page += "<h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ");\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
-    page += "<br>";
+    page += "<br><br>";
 
     // Generate the Website Links
     for (let i = 0; i < websiteCount; i++) {
@@ -30,19 +30,25 @@ function generate() {
         var websiteAddress = document.getElementById("websiteAddress" + i).value;
         page += "<button onclick='window.open(" + "\"http://" + websiteAddress + "\")'>" + websiteName + "</button>";
     }
+    page += "<br><br>";
 
     // Generate the animal section
+    page += "<h2>Animal you love, click them to make the sound</h2>";
     let animals = document.getElementsByName("animal");
-    let animalsChecked = [];
-    for (let i = 0; i < animals.length; i++){
+    let animalsCount = 0;
+    for (let i = 0; i < animals.length; i++) {
         if (animals[i].checked){
-            animalsChecked.push(animals[i].value);
+            page += "<div class=\"animals\" style=\"width:120px; height:120px; float:left; margin: 10px;\" onclick=\"playSound('" + animals[i].id + "')\"><img src=\"./Pictures/" + animals[i].id + ".png\" width=\"120px\"></div>";
+            animalsCount += 1;
+        }
+        if (animalsCount%5 === 0) {
+            page += "<br><br>";
         }
     }
-    
+    page += "<script>function playSound(animal){let audio = new Audio(\"./Sounds/\" + animal + \".wav\");audio.play();}</script>";
 
     // Create new window and open with "page"
-    myWindow = window.open("", "ISP", width=1000, height=2000);
+    myWindow = window.open("", "ISP", "width=800, height=1200");
     myWindow.document.write(page);
 }
 
