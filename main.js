@@ -31,6 +31,16 @@ function generate() {
         page += "<button onclick='window.open(" + "\"http://" + websiteAddress + "\")'>" + websiteName + "</button>";
     }
 
+    // Generate the animal section
+    let animals = document.getElementsByName("animal");
+    let animalsChecked = [];
+    for (let i = 0; i < animals.length; i++){
+        if (animals[i].checked){
+            animalsChecked.push(animals[i].value);
+        }
+    }
+    
+
     // Create new window and open with "page"
     myWindow = window.open("", "ISP", width=1000, height=2000);
     myWindow.document.write(page);
