@@ -22,7 +22,7 @@ function generate() {
     let colorGreen = document.getElementById("colorGreen").value;
     let colorBlue = document.getElementById("colorBlue").value;
     let date = new Date().toLocaleDateString("de-DE");
-    page += "<h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ");\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
+    page += "<body><h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ");\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
     page += "<br><br>";
 
     // Generate the Website Links
@@ -54,11 +54,19 @@ function generate() {
     page += "<script>function playSound(animal){let audio = new Audio(\"./Sounds/\" + animal + \".wav\");audio.play();}</script>";
 
     // Generate drag and drop text
-    page += "<p style = \"font-size: 50px; position: absolute; top: 200px; left: 0px; background-color: lightgrey;\" onmousedown = \"grabber(event);\"> This is ISP PA2 </p>";
+    page += "<p style = \"font-size: 25px; position: absolute; top: 200px; left: 0px; background-color: lightgrey;\" onmousedown = \"grabber(event);\"> !!DRAG AND MOVE AWAY!!This is ISP PA2</p>";
     page += "<script>var diffX,diffY,theElement;function grabber(event){theElement=event.currentTarget;let posX=parseInt(theElement.style.left);let posY = parseInt(theElement.style.top);"
     page += "diffX=event.clientX-posX;diffY=event.clientY-posY;document.addEventListener(\"mousemove\",mover,true);document.addEventListener(\"mouseup\", dropper, true);event.stopPropagation();event.preventDefault();}"
     page += "function mover(event){theElement.style.left=(event.clientX-diffX)+\"px\";theElement.style.top=(event.clientY-diffY)+\"px\";event.stopPropagation();}function dropper(event){document.removeEventListener(\"mouseup\""
-    page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script>"
+    page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script></body>"
+
+    // Generate back ground
+    let backGounds = document.getElementsByName("backGround");
+    for (let i = 0; i < backGounds.length; i++) {
+        if (backGounds[i].style.opacity === 1) {
+            page += "<style>body{background-image:url(\"./Pictures/BackGrounds/" + backgound.id + ".jpg\");background-color:hsla(0, 100%, 30%, opacity);}</style>"
+        }
+    }
 
     // Create new window and open with "page"
     myWindow = window.open("", "ISP", "width=800, height=1200");
@@ -88,8 +96,6 @@ function deleteWebsite() {
 
 // Onclick function for select background
 function selectBackGround(item) {
-    console.log("check");
-    console.log(item);
     backGounds = document.getElementsByName("backGround");
     for (let i = 0; i < backGounds.length; i++) {
         if (backGounds[i].id == item) {
