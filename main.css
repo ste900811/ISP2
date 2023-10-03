@@ -1,14 +1,14 @@
+body {
+    background-image: url("./Pictures/BackGrounds/mainBackGround.jpg");
+    background-color:  hsla(0, 100%, 30%, opacity);
+}
+
 td {
     text-align: center;
     vertical-align: middle;
 }
 
-.addWebsite {
-    display: flex;
-    justify-content: center;
-}
-
-.generate {
+.bottomCenter {
     display: flex;
     justify-content: center;
 }
