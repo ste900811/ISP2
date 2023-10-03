@@ -85,3 +85,18 @@ function deleteWebsite() {
     document.getElementById("Websites").deleteRow(-1);
     websiteCount -= 1;
 }
+
+// Onclick function for select background
+function selectBackGround(item) {
+    console.log("check");
+    console.log(item);
+    backGounds = document.getElementsByName("backGround");
+    for (let i = 0; i < backGounds.length; i++) {
+        if (backGounds[i].id == item) {
+            backGounds[i].style.opacity = 1;
+        }
+        else {
+            backGounds[i].style.opacity = 0.5;
+        }
+    }
+}
