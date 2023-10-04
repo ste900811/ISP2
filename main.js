@@ -64,7 +64,7 @@ function generate() {
     let backGrounds = document.getElementsByName("backGround");
     for (let i = 0; i < backGrounds.length; i++) {
         if (backGrounds[i].style.opacity == 1) {
-            page += "<style>body{background-image:url(\"./Pictures/BackGrounds/" + backGrounds[i].id + ".jpg\");background-color:hsla(0, 100%, 30%, opacity);}</style>"
+            page += "<style>body{background-image:url(\"./Pictures/BackGrounds/" + backGrounds[i].id + ".jpg\");background-size:cover;background-color:hsla(0, 100%, 30%, opacity);}</style>"
         }
     }
 
