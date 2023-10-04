@@ -61,10 +61,10 @@ function generate() {
     page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script></body>"
 
     // Generate back ground
-    let backGounds = document.getElementsByName("backGround");
-    for (let i = 0; i < backGounds.length; i++) {
-        if (backGounds[i].style.opacity === 1) {
-            page += "<style>body{background-image:url(\"./Pictures/BackGrounds/" + backgound.id + ".jpg\");background-color:hsla(0, 100%, 30%, opacity);}</style>"
+    let backGrounds = document.getElementsByName("backGround");
+    for (let i = 0; i < backGrounds.length; i++) {
+        if (backGrounds[i].style.opacity == 1) {
+            page += "<style>body{background-image:url(\"./Pictures/BackGrounds/" + backGrounds[i].id + ".jpg\");background-color:hsla(0, 100%, 30%, opacity);}</style>"
         }
     }
 
