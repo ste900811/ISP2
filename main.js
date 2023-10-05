@@ -1,5 +1,8 @@
 // Generate the webpage
 function generate() {
+    let animalX = 10;
+    console.log("check1", typeof(animalX) , animalX);
+    let animalY = 0;
     if(myWindow != null) {
         myWindow.close();
         page = "";
@@ -22,10 +25,14 @@ function generate() {
     let colorGreen = document.getElementById("colorGreen").value;
     let colorBlue = document.getElementById("colorBlue").value;
     let date = new Date().toLocaleDateString("de-DE");
+    animalX = parseFloat(animalX) + parseFloat(fontsize);
+    console.log("check2", typeof(animalX) , animalX);
     page += "<body><h1 style=\"font-size:" + fontsize + "px; font-family:" + fontStyle + "; color:rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ");\"> Generate by " + firstName + " " + lastName + " on " + date + "</h1>";
-    page += "<br><br>";
+    animalX = parseFloat(animalX) + 21;
+    console.log("check3", typeof(animalX) , animalX);
+    page += "<br>";
 
-    // Generate the Website Links
+    // Generate the button for Website Links
     let buttonCount = 0;
     for (let i = 0; i < websiteCount; i++) {
         var websiteName = document.getElementById("websiteName" + i).value;
@@ -33,13 +40,24 @@ function generate() {
         page += "<button style=\"margin-right:10px;\" onclick='window.open(" + "\"http://" + websiteAddress + "\")'>" + websiteName + "</button>";
         buttonCount += 1;
         if (buttonCount%5 === 0) {
+            animalX = parseFloat(animalX) + 21;
+            console.log("check4", typeof(animalX) , animalX);
             page += "<br>";
         }
     }
-    page += "<br><br>";
+    animalX = parseFloat(animalX) + 21;
+    console.log("check5", typeof(animalX) , animalX);
+    page += "<br>";
 
+    // Generate drag and drop text and function
+    page += "<p style = \"font-size: 25px; position: absolute; top:" + animalX + "px; left: 0px; background-color: lightgrey;\" onmousedown = \"grabber(event);\"> !!DRAG AND MOVE AWAY!!This is ISP PA2</p>";
+    page += "<script>var diffX,diffY,theElement;function grabber(event){theElement=event.currentTarget;let posX=parseInt(theElement.style.left);let posY = parseInt(theElement.style.top);"
+    page += "diffX=event.clientX-posX;diffY=event.clientY-posY;document.addEventListener(\"mousemove\",mover,true);document.addEventListener(\"mouseup\", dropper, true);event.stopPropagation();event.preventDefault();}"
+    page += "function mover(event){theElement.style.left=(event.clientX-diffX)+\"px\";theElement.style.top=(event.clientY-diffY)+\"px\";event.stopPropagation();}function dropper(event){document.removeEventListener(\"mouseup\""
+    page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script></body>"
+    animalX = parseFloat(animalX) + 25;
+    
     // Generate the animal section
-    page += "<h2>Animal you love, click them to make the sound</h2>";
     let animals = document.getElementsByName("animal");
     let animalsCount = 0;
     for (let i = 0; i < animals.length; i++) {
@@ -47,18 +65,8 @@ function generate() {
             page += "<div class=\"animals\" style=\"width:120px; height:120px; float:left; margin: 10px;\" onclick=\"playSound('" + animals[i].id + "')\"><img src=\"./Pictures/" + animals[i].id + ".png\" width=\"120px\"></div>";
             animalsCount += 1;
         }
-        if (animalsCount%5 === 0) {
-            page += "<br><br>";
-        }
     }
     page += "<script>function playSound(animal){let audio = new Audio(\"./Sounds/\" + animal + \".wav\");audio.play();}</script>";
-
-    // Generate drag and drop text
-    page += "<p style = \"font-size: 25px; position: absolute; top: 200px; left: 0px; background-color: lightgrey;\" onmousedown = \"grabber(event);\"> !!DRAG AND MOVE AWAY!!This is ISP PA2</p>";
-    page += "<script>var diffX,diffY,theElement;function grabber(event){theElement=event.currentTarget;let posX=parseInt(theElement.style.left);let posY = parseInt(theElement.style.top);"
-    page += "diffX=event.clientX-posX;diffY=event.clientY-posY;document.addEventListener(\"mousemove\",mover,true);document.addEventListener(\"mouseup\", dropper, true);event.stopPropagation();event.preventDefault();}"
-    page += "function mover(event){theElement.style.left=(event.clientX-diffX)+\"px\";theElement.style.top=(event.clientY-diffY)+\"px\";event.stopPropagation();}function dropper(event){document.removeEventListener(\"mouseup\""
-    page += ", dropper, true);document.removeEventListener(\"mousemove\", mover, true);event.stopPropagation();}</script></body>"
 
     // Generate back ground
     let backGrounds = document.getElementsByName("backGround");
